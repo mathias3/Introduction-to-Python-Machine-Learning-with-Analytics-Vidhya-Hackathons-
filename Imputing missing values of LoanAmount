@@ -1,0 +1,5 @@
+# Check variables have missing values in test data set
+number_missing_values_test_data = test.isnull().sum()
+
+# Impute missing value of LoanAmount with 168 for test data set
+test['LoanAmount'].fillna(168, inplace=True)
