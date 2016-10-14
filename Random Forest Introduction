@@ -17,15 +17,3 @@ model.fit(x_train, y_train)
 # Converting predictors and outcome to numpy array
 x_test = test_modified[predictors].values
 
-#Predict Output
-predicted= model.predict(x_test)
-
-#Reverse encoding for predicted outcome
-predicted = number.inverse_transform(predicted)
-
-#Store it to test dataset
-test_modified['Loan_Status']=predicted
-
-#Output file to make submission
-test_modified.to_csv("Submission1.csv",columns=['Loan_ID','Loan_Status'])
-
